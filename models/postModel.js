@@ -5,6 +5,10 @@ const postSchema = mongoose.Schema({
     content:String,
     category:String,
     date:String,
+    creator : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "User"
+    },
     likes:{
         type:[String],default:[]
     },

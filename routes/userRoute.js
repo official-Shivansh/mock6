@@ -44,6 +44,8 @@ userRoute.post("/login", async (req, res) => {
                     
                     let token = jwt.sign({ 
                         userID: user._id
+                    , email: user.email,
+                    username:user.username 
                      },
                         process.env.secretCode, { expiresIn: "3d" })
                     res.status(200).json({ msg: "Login Successfully", token })
